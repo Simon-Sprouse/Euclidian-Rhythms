@@ -10,20 +10,26 @@ import numpy as np
 
 def bjorklund(pulses, steps):
     
-    arr = np.arange(-1, steps, 1)
+    start = 15
+    
+    arr = np.arange(start, steps + (1 + start), 1)
     print(arr)
     
     arr *= pulses
-    
     print(arr)
     
     arr %= steps
-    
     print(arr)
     
-    print((np.diff(arr) < 0).astype(int))
+    diff = np.diff(arr)
+    print(diff)
+    
+    result = (diff < 0).astype(int)
+    print(result)
+    
+    return result
     
     
     
     
-bjorklund(5, 13)
+bjorklund(8, 21)
