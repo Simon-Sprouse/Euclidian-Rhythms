@@ -11,11 +11,17 @@ def gcd(m, k):
         return m
     else: 
         return gcd(k, m % k)
+    
+    
+def gcd2(m, k):
+    while k != 0:
+        print("{} = {} * {} + {}".format(m, k, m // k, m % k))
+        m, k = k, m % k
+    return m
 
-print("hello world")
 
-A = 1008
-B = 20
+A = 13
+B = 5
 
-print(gcd(A, B))
-
+# print(gcd(A, B))
+print(gcd2(A, B))
