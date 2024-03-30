@@ -10,7 +10,7 @@ import numpy as np
 
 def bjorklund(pulses, steps):
     
-    start = 15
+    start = -1
     
     arr = np.arange(start, steps + (1 + start), 1)
     print(arr)
@@ -30,6 +30,4 @@ def bjorklund(pulses, steps):
     return result
     
     
-    
-    
-bjorklund(8, 21)
+bjorklund(3, 8)
