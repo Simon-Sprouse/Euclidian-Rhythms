@@ -10,6 +10,8 @@ let is_running = false;
 let min_tempo = 20;
 let max_tempo = 240;
 
+const myWheel = new NoteWheel('wheel', accent_array);
+
 const sound1 = new Audio("./sounds/click1.mp3");
 const sound2 = new Audio("./sounds/click2.mp3");
 
@@ -63,7 +65,6 @@ minus_button.onclick = tempoMinusButton;
 plus_button.onclick = tempoPlusButton;
 
 function playSound() { 
-    console.log("playing sound");
     if (accent_array[count] == 1) { 
         sound1.play();
         
@@ -93,6 +94,7 @@ const metronome = new Timer(playSound, 60000 / bpm, { immediate: true});
 function changePattern() { 
     let result = bjorklund(3, 8, shift);
     accent_array = result;
+    myWheel.updateArray(accent_array);
 }
 
 function shiftMinusButton() { 
@@ -114,4 +116,3 @@ shift_plus_button.onclick = shiftPlusButton;
 
 
 
-const myWheel = new NoteWheel('wheel');

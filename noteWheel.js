@@ -1,8 +1,14 @@
 class NoteWheel {
 
-    constructor(containerId, noteCount = 8) {
-        this.container = document.getElementById(containerId);
-        this.accent_array = new Array(noteCount).fill(false);
+    constructor(_containerId, _accent_array, noteCount = 8) {
+        this.container = document.getElementById(_containerId);
+        this.accent_array = _accent_array;
+        this.drawNotes();
+    }
+
+    updateArray(_accent_array) { 
+        console.log(_accent_array);
+        this.accent_array = _accent_array;
         this.drawNotes();
     }
 
