@@ -20,6 +20,9 @@
     align-items: center;
     cursor: pointer;
   }
-  .note.on {
+  .note.on1 {
     background-color: #4CAF50;
+  }
+  .note.on2 { 
+    background-color: blue;
   }

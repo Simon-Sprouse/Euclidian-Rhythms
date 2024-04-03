@@ -10,8 +10,8 @@ let is_running = false;
 let min_tempo = 20;
 let max_tempo = 240;
 
-const sound1 = new Audio("click1.mp3");
-const sound2 = new Audio("click2.mp3");
+const sound1 = new Audio("./sounds/click1.mp3");
+const sound2 = new Audio("./sounds/click2.mp3");
 
 const tempoDisplay = document.getElementById("tempoDisplay");
 const start_button = document.getElementById("start");
@@ -63,8 +63,10 @@ minus_button.onclick = tempoMinusButton;
 plus_button.onclick = tempoPlusButton;
 
 function playSound() { 
+    console.log("playing sound");
     if (accent_array[count] == 1) { 
         sound1.play();
+        
     }
     else { 
         sound2.play();
