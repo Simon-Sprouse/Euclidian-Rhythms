@@ -8,12 +8,26 @@ let count = 0;
 let shift = 0;
 let is_running = false;
 let min_tempo = 20;
-let max_tempo = 240;
+let max_tempo = 640;
 
 const myWheel = new NoteWheel('wheel', accent_array);
 
 const sound0 = new Audio("./sounds/click0.mp3");
 const sound1 = new Audio("./sounds/click1.mp3");
+
+// const sound0 = new Audio("./sounds/bruhShort.mp3");
+// const sound1 = new Audio("./sounds/bruhHigh.mp3");
+
+
+const bruh = new Audio("./sounds/bruhShort.mp3");
+
+const testButton = document.getElementById("testButton");
+testButton.addEventListener("click", () => {
+    sound0.play();
+    sound1.play();
+    bruh.play();
+})
+
 
 const tempoDisplay = document.getElementById("tempoDisplay");
 const start_button = document.getElementById("start");
@@ -66,16 +80,22 @@ plus_button.onclick = tempoPlusButton;
 
 function playSound() { 
 
+
+
     switch(accent_array[count]) { 
         case 0:
+            sound0.currentTime = 0;
             sound0.play();
             break;
         case 1:
+            sound0.currentTime = 0;
             sound1.play();
             break;
         case 2:
             break;
     }   
+
+
 
     // if (accent_array[count] == 1) { 
     //     sound1.play();
@@ -106,7 +126,7 @@ const metronome = new Timer(playSound, 60000 / bpm, { immediate: true});
 
 
 function changePattern() { 
-    let result = bjorklund(3, 8, shift);
+    let result = bjorklund(3, 16, shift);
     accent_array = result;
     myWheel.updateArray(accent_array);
 }
