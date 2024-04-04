@@ -8,7 +8,12 @@
     border-radius: 50%;
     border: 2px solid #333;
   }
-  .note {
+
+.wheel-container { 
+    margin-top: 20px;
+}
+
+.note {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -19,10 +24,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
-  .note.on1 {
+}
+
+.note.on1 {
     background-color: #4CAF50;
-  }
-  .note.on2 { 
+}
+
+.note.on2 { 
     background-color: blue;
-  }
+}

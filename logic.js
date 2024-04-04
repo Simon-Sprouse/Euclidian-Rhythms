@@ -12,8 +12,8 @@ let max_tempo = 240;
 
 const myWheel = new NoteWheel('wheel', accent_array);
 
+const sound0 = new Audio("./sounds/click0.mp3");
 const sound1 = new Audio("./sounds/click1.mp3");
-const sound2 = new Audio("./sounds/click2.mp3");
 
 const tempoDisplay = document.getElementById("tempoDisplay");
 const start_button = document.getElementById("start");
@@ -65,13 +65,27 @@ minus_button.onclick = tempoMinusButton;
 plus_button.onclick = tempoPlusButton;
 
 function playSound() { 
-    if (accent_array[count] == 1) { 
-        sound1.play();
+
+    switch(accent_array[count]) { 
+        case 0:
+            sound0.play();
+            break;
+        case 1:
+            sound1.play();
+            break;
+        case 2:
+            break;
+    }   
+
+    // if (accent_array[count] == 1) { 
+    //     sound1.play();
         
-    }
-    else { 
-        sound2.play();
-    }
+    // }
+    // else { 
+    //     sound2.play();
+    // }
+
+
     count++;
     if (count == accent_array.length) { 
         count = 0;
